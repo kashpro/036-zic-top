@@ -1,0 +1,28 @@
+// Если скормить sass не конкретный файл-источник, а директорию, то css файлы не будут генерироваться для файлов начинающихся с _. Т.е. наличие файла style.scss приведёт к созданию style.css, а наличие файла _some.scss ― нет.
+// https://habr.com/ru/post/140612/
+
+// Eсли указать .css на конце, то файл не будет минимизарован и будет вставлен в самое начало
+// https://stackoverflow.com/questions/7111610/import-regular-css-file-in-scss-file
+@import "~normalize.css/normalize";
+
+@import "./fonts.scss";
+@import "./_mixins.scss";
+@import "./_vars.scss";
+@import "./_helpers.scss";
+@import "./global.scss";
+
+
+/*common*/
+@import "./blocks/btn.scss";
+@import "./blocks/decor.scss";
+@import "./blocks/arrow-link.scss";
+@import "./blocks/test.scss";
+@import "./blocks/ball.scss";
+/*blocks*/
+// Даже внутри подпапок ссылка на ассеты будет выглядеть так: url("../assets/images/3.png"); (без дополнительного выхода наверх из подпапки)
+// @import "./blocks/group1.scss";
+@import "./blocks/header.scss";
+@import "./blocks/title.scss";
+@import "./blocks/main.scss";
+@import "./blocks/team.scss";
+@import "./blocks/footer.scss";

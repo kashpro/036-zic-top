@@ -1,0 +1,108 @@
+.c1 {background-color: $temp1;} // pink
+.c2 {background-color: $temp2;} // green
+.c3 {background-color: $temp3;} // blue
+.c4 {background-color: $temp4;} // yellow
+.c5 {background-color: $temp5;} // magenta
+.c6 {background-color: $temp6;} // cyan
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+body {
+  font-size: 18px;
+  font-family: $main-font;
+  font-weight: 600;
+  font-style: normal;
+  color: #ffffff;
+  background-color: #1f1f1f;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 ,h4, h5, h6{
+  margin: 0;
+  padding: 0;
+}
+
+// html {
+//   @media (max-width: 1279px) {
+//     scroll-behavior: smooth; // плавный скролл
+//   }
+// }
+
+
+body {
+  -webkit-tap-highlight-color: transparent; // убрать синий БГ при таче
+  // overflow-x: hidden;
+  background-image: url("../assets/images/bg1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 0;
+}
+
+html {
+  @media (min-width: 1280px) and (max-width: 1760px) {
+    font-size: 0.0568181818vw;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 0.0781860828vw;
+  }
+  @media (max-width: 767px) {
+    font-size: 0.2666666666vw;
+  }
+}
+
+:root {
+  --app-height: 100%;
+}
+
+// html,
+// body {
+//    height: var(--app-height);
+// }
+
+.fp-tableCell {
+  @media (max-width: 1279px) {
+    height: auto !important;
+  }
+}
+
+.js-section {
+  @media (max-width: 1279px) {
+    height: auto !important;
+  }
+}
+
+#app {
+  position: relative;
+  z-index: 5;
+}
+
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
+  // content: url("../assets/images/ball-ltr-ei.png") url("../assets/images/ball-ltr-eo.png") url("../assets/images/ball-ttd-eo.png");   // load images
+}

@@ -1,0 +1,123 @@
+.header {
+  height: 150px;
+  @media (min-width: 1760px) and (max-height: 900px) {
+    height: 100px;
+  }
+  @media (min-width: 1760px) and (max-height: 780px) {
+    height: 75px;
+  }
+  @media (min-width: 1280px) and (max-width: 1760px) {
+    height: 150rem;
+  }
+  @media (min-width: 1280px) and (max-width: 1760px) and (max-height: 900px) {
+    height: 100rem;
+  }
+  @media (min-width: 1280px) and (max-width: 1760px) and (max-height: 780px) {
+    height: 75rem;
+  }
+  @media (max-width: 1279px) and (max-height: 900px) {
+    height: 100px;
+  }
+  @media (max-width: 1279px) and (max-height: 780px) {
+    height: 75px;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    height: 150rem;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) and (max-height: 900px) {
+    height: 100rem;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) and (max-height: 780px) {
+    height: 75rem;
+  }
+  @media (max-width: 767px) {
+    height: 60px;
+  }
+  &__container {
+    height: 100%;
+    // background-color: $temp1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  
+    // @media (min-width: 768px) and (max-height: 800px) {
+    //   height: 100px;
+    // }
+    // @media (min-width: 768px) and (max-height: 700px) {
+    //   height: 75px;
+    // }
+    // @media (max-width: 1200px) {
+    //   height: 112.5rem;
+    // }
+    // @media (max-width: 767px) {
+    //   height: 60px;
+    // }
+  }
+  &__logo1 {
+    max-width: 164px;
+    @include fcc;
+    @media (min-width: 1280px) and (max-width: 1760px) {
+      max-width: 164rem;
+    }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      max-width: 164rem;
+    }
+    @media (max-width: 767px) {
+      max-width: 52px;
+    }
+    // @media (min-width: 768px) and (max-height: 700px) {
+    //   max-width: 123px;
+    // }
+    // @media (max-width: 1200px) {
+    //   max-width: 184.5rem;
+    // }
+    // @media (max-width: 767px) {
+    //   max-width: 52px;
+    // }
+  }
+  &__logo2 {
+    max-width: 393px;
+    @include fcc;
+    @media (min-width: 1280px) and (max-width: 1760px) {
+      max-width: 393rem;
+    }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      max-width: 393rem;
+    }
+    @media (max-width: 767px) {
+      max-width: 125px;
+    }
+    // @media (min-width: 768px) and (max-height: 700px) {
+    //   max-width: 295px;
+    // }
+    // @media (max-width: 1200px) {
+    //   max-width: 442.5rem;
+    // }
+    // @media (max-width: 767px) {
+    //   max-width: 125px;
+    // }
+  }
+  &__logo3 {
+    max-width: 148px;
+    @include fcc;
+    @media (min-width: 1280px) and (max-width: 1760px) {
+      max-width: 148rem;
+    }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      max-width: 148rem;
+    }
+    @media (max-width: 767px) {
+      max-width: 54px;
+    }
+    // @media (min-width: 768px) and (max-height: 700px) {
+    //   max-width: 111px;
+    // }
+    // @media (max-width: 1200px) {
+    //   max-width: 166.5rem;
+    // }
+    // @media (max-width: 767px) {
+    //   max-width: 54px;
+    // }
+  }
+}
