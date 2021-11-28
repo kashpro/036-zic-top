@@ -47,7 +47,8 @@ export default class Development {
       let screenWidth = window.screen.width;
       let screenHeight = window.screen.height;
       let htmlFontSize = window.getComputedStyle(document.documentElement).fontSize;
-      let template = `<div>V: ${viewPortWidth}x${viewPortHeight} | W: ${windowWidth}x${windowHeight} | S: ${screenWidth}x${screenHeight} | B: ${browserName} | HTML FZ: ${htmlFontSize}</div>`;
+      let template = `<div>V: ${viewPortWidth}x${viewPortHeight} | W: ${windowWidth}x${windowHeight} | S: ${screenWidth}x${screenHeight}<br>
+      B: ${browserName} | HTML FZ: ${htmlFontSize}</div>`;
       windowStatsElement.innerHTML = template;
     };
     refreshWindowStats();

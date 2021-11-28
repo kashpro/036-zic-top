@@ -22,4 +22,10 @@
     // line-height: 23rem;
     // width: 155rem;
   // }
+  img {
+    transition: all 0.2s ease;
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
 }

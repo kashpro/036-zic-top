@@ -2257,6 +2257,22 @@
 
         //Sliding with arrow keys, both, vertical and horizontal
         function keydownHandler(e) {
+            if (e.code == "Home" || e.code == "End") {
+                // console.log("home-end");
+                e.preventDefault();
+                return;
+              }
+            //   if (e.code == "PageUp" || e.code == "PageDown") {
+            //     // console.log("pageup-dpwn");
+            //     e.preventDefault();
+            //     return;
+            //   }
+            //   if (e.code == "ArrowUp" || e.code == "ArrowDown") {
+            //     // console.log("arrowup-dpwn");
+            //     e.preventDefault();
+            //     return;
+            //   }
+
             clearTimeout(keydownId);
 
             var activeElement = document.activeElement;

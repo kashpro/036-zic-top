@@ -52,6 +52,7 @@ class Test {
   $answerButton = null;
   $list = null;
   $userAnswer = null;
+  $scrollTop = null;
 
   constructor($test) {
     this.$test = $test;
@@ -75,10 +76,22 @@ class Test {
     this.$list.addEventListener("click", this.listClickHandler);
     this.hidden = false;
     this.$test.classList.remove("test--hidden");
+    if (window.innerWidth < 768) {
+      this.scrollTop = window.pageYOffset;
+      document.documentElement.classList.add("offscroll-y");
+      document.body.classList.add("offscroll-y");
+      // window.app.classList.add("offscroll-y");
+    }
   }
   hide() {
     this.hidden = true;
     this.$test.classList.add("test--hidden");
+    if (window.innerWidth < 768) {
+      document.documentElement.classList.remove("offscroll-y");
+      document.body.classList.remove("offscroll-y");
+      // window.app.classList.remove("offscroll-y");
+      window.scrollTo(0, this.scrollTop);
+    }
   }
   resetLabels() {
     this.$labels.forEach( ($label) => {
@@ -158,9 +171,9 @@ const ballClickHandler = (e) => { fullpage_api.moveSectionDown(); }
 const $ball = document.querySelector(".js-ball");
 $ball.addEventListener("click", ballClickHandler);
 
-const $ball2 = document.querySelector(".js-ball-2");
+// const $ball2 = document.querySelector(".js-ball-2");
 
-let frames = 0;
+// let frames = 0;
 
 // function animateTopToDown() {
 //   let frames = 0;
@@ -188,71 +201,89 @@ let myFullpage = new fullpage('#app', {
     scrollingSpeed: 1350,
     sectionSelector: '.js-section',
     responsiveHeight: 0,
+    normalScrollElements: ".js-ball",
+    responsiveWidth: 1280,
     
     afterLoad: async (origin, destination, direction) => {
       if (window.innerWidth < 1280) {return;}
       document.querySelectorAll('.js-section.active [data-aos]').forEach(($el) => {$el.classList.add("aos-animate")});
       fullpage_api.setAllowScrolling(false);
+      
       await new Promise(resolve => {setTimeout( () => resolve(), 200);});
       fullpage_api.setAllowScrolling(true);
+      $ball.addEventListener("click", ballClickHandler);
     },
     onLeave: async (origin, destination, direction) => {
       // console.log(origin.index, destination.index, direction);
-      // fullpage_api.setAllowScrolling(false);
       if (window.innerWidth < 1280) {return;}
-      // await new Promise(resolve => {setTimeout( () => resolve(), 200);});
+      
+      // const windowHeight = window.innerHeight;
+      // $ball.style.transform = `translate3d(0, ${windowHeight}px, 0)`;
+      // await new Promise(resolve => {setTimeout( () => resolve(), 10);});
+      // const appTransfrorm = window.getComputedStyle(window.app).getPropertyValue("transform");
+      // const appTransformY = new DOMMatrix(appTransfrorm).f;
+      // console.log(appTransformY);
+      // console.log(window.innerHeight);
+      
+      // fullpage_api.setAllowScrolling(false);
+      $ball.removeEventListener("click", ballClickHandler);
+
+      await new Promise(resolve => {setTimeout( () => resolve(), 200);});
       if (origin.index == 8 && direction == "down") {
-        $ball.classList.add("hide");
-        $ball2.classList.remove("hide");
+        // console.log("8 down");
+        // $ball.removeEventListener("click", ballClickHandler);
+        $ball.classList.add("ball--stay");
+        // $ball2.classList.remove("hide");
+        await new Promise(resolve => {setTimeout( () => resolve(), 1000);});
+        
       }
-      else if (origin.index == 9 && direction == "up") {
+      else if (origin.index == 9 && destination.index == 8) {
         await new Promise(resolve => {setTimeout( () => resolve(), 2000);});
-        $ball.classList.remove("hide");
-        $ball2.classList.add("hide");
+        $ball.classList.remove("ball--stay");
+        // $ball.addEventListener("click", ballClickHandler);
+        // $ball2.classList.add("hide");
       }
-      else if (destination.index == 0) {
-        $ball.removeEventListener("click", ballClickHandler);
-        // $ball.classList.remove("ball--stay");
-        $ball.classList.remove("hide");
-        $ball2.classList.add("hide");
+      else if (origin.index > 1 && destination.index == 0) {
+        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
+        console.log("to up");
+        $ball.classList.remove("ball--stay");
+        $ball.classList.remove("ball--center");
+        // $ball2.classList.add("hide");
+      }
+      else if (origin.index == 1 && destination.index == 0) {
+        // $ball.removeEventListener("click", ballClickHandler);
+        $ball.classList.remove("ball--stay");
+
         $ball.classList.remove("ball--center");
         $ball.classList.add("ball--center-to-down");
         $ball.classList.add("ball--animate");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
         $ball.classList.remove("ball--center-to-down");
         $ball.classList.remove("ball--animate");
-        await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        $ball.addEventListener("click", ballClickHandler);
+        
+        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
+        // $ball.addEventListener("click", ballClickHandler);
       }
-      else if (origin.index == 0) {
-        $ball.removeEventListener("click", ballClickHandler);
-        // $ball.classList.remove("ball--stay");
-        $ball.classList.remove("hide");
-        $ball2.classList.add("hide");
+      else if (origin.index == 0 && destination.index == 1) {
+        // $ball.removeEventListener("click", ballClickHandler);
+        $ball.classList.remove("ball--stay");
+
         $ball.classList.remove("ball--center");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
         $ball.classList.add("ball--top-to-center");
         $ball.classList.add("ball--animate");
-        // animateTopToDown();
-        // setInterval( () => {console.log(Math.random());} ,1000);
-        // let frames = 0;
-        // let anim = setInterval( () => {$ball.style.backgroundPositionY = (frames * 4) + "%"} , 1000);
-        // frames++;
-        // console.log(frames);
-        // if (frames == 26) {clearInterval(anim);}
-
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
         $ball.classList.remove("ball--top-to-center");
         $ball.classList.remove("ball--animate");
         $ball.classList.add("ball--center");
-        await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        $ball.addEventListener("click", ballClickHandler);
+        
+        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
+        // $ball.addEventListener("click", ballClickHandler);
       }
       else if ((origin.index == 1 || origin.index == 3 || origin.index == 5 || origin.index == 7) /*&& direction == "down"*/) {
-        $ball.removeEventListener("click", ballClickHandler);
-        // $ball.classList.remove("ball--stay");
-        $ball.classList.remove("hide");
-        $ball2.classList.add("hide");
+        // $ball.removeEventListener("click", ballClickHandler);
+        $ball.classList.remove("ball--stay");
+
         $ball.classList.remove("ball--center");
         $ball.classList.add("ball--center-to-right");
         $ball.classList.add("ball--animate");
@@ -265,18 +296,18 @@ let myFullpage = new fullpage('#app', {
         $ball.classList.remove("ball--left-to-center");
         $ball.classList.remove("ball--animate");
         $ball.classList.add("ball--center");
-        await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        $ball.addEventListener("click", ballClickHandler);
+        
+        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
+        // $ball.addEventListener("click", ballClickHandler);
       } 
       else if ((origin.index == 2 || origin.index == 4 || origin.index == 6 | origin.index == 8) /*&& direction == "down"*/) {
-        $ball.removeEventListener("click", ballClickHandler);
-        // $ball.classList.remove("ball--stay");
-        $ball.classList.remove("hide");
-        $ball2.classList.add("hide");
+        // $ball.removeEventListener("click", ballClickHandler);
+        $ball.classList.remove("ball--stay");
+        
         $ball.classList.remove("ball--center");
         $ball.classList.add("ball--center-to-down");
         $ball.classList.add("ball--animate");
-        await new Promise(resolve => {setTimeout( () => resolve(), 750);});
+        await new Promise(resolve => {setTimeout( () => resolve(), 500);});
         $ball.classList.remove("ball--center-to-down");
         $ball.classList.remove("ball--animate");
         $ball.classList.add("ball--top-to-center");
@@ -285,8 +316,9 @@ let myFullpage = new fullpage('#app', {
         $ball.classList.remove("ball--top-to-center");
         $ball.classList.remove("ball--animate");
         $ball.classList.add("ball--center");
-        await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        $ball.addEventListener("click", ballClickHandler);
+        
+        // await new Promise(resolve => {setTimeout( () => resolve(), 7500);});
+        // $ball.addEventListener("click", ballClickHandler);
       }
     },
 });
@@ -294,14 +326,14 @@ let myFullpage = new fullpage('#app', {
 // fullpage_api.setKeyboardScrolling(false);
 
 
-if (window.innerWidth < 1280) {fullpage_api.setResponsive(true);}
-window.addEventListener("resize", (e) => {
-  if (window.innerWidth < 1280) {
-    fullpage_api.setResponsive(true);
-  } else {
-    fullpage_api.setResponsive(false);
-  }
-});
+// if (window.innerWidth < 1280) {fullpage_api.setResponsive(true);}
+// window.addEventListener("resize", (e) => {
+//   if (window.innerWidth < 1280) {
+//     fullpage_api.setResponsive(true);
+//   } else {
+//     fullpage_api.setResponsive(false);
+//   }
+// });
 
 /* arrow buttons */
 const $arrowDownButton = document.querySelector(".js-arrow-down-button");
@@ -310,7 +342,8 @@ $arrowDownButton.addEventListener("click", (e) => { fullpage_api.moveSectionDown
 const $arrowUpButton = document.querySelector(".js-arrow-up-button");
 $arrowUpButton.addEventListener("click", (e) => { fullpage_api.moveTo(1); });
 
-
+const $titleDecor = document.querySelector(".js-title-decor");
+$titleDecor.addEventListener("click", (e) => { fullpage_api.moveTo(10); });
 
 
 

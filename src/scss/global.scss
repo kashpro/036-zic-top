@@ -57,14 +57,18 @@ h1, h2, h3 ,h4, h5, h6{
 
 body {
   -webkit-tap-highlight-color: transparent; // убрать синий БГ при таче
-  // overflow-x: hidden;
   background-image: url("../assets/images/bg1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 0;
+  overflow: hidden !important;
 }
 
 html {
+  overflow-x: hidden !important;
+  @media (min-width: 1280px) {
+    overflow-y: hidden !important;//-moz-scrollbars-none !important;
+  }
   @media (min-width: 1280px) and (max-width: 1760px) {
     font-size: 0.0568181818vw;
   }
@@ -85,16 +89,22 @@ html {
 //    height: var(--app-height);
 // }
 
-.fp-tableCell {
-  @media (max-width: 1279px) {
-    height: auto !important;
-  }
-}
+// .fp-tableCell {
+//   @media (max-width: 1279px) {
+//     height: auto !important;
+//   }
+// }
 
 .js-section {
   @media (max-width: 1279px) {
     height: auto !important;
   }
+  // &-100vh {
+  //   @media (max-width: 1279px) {
+  //     height: 100vh !important;
+  //   }
+  //   height: 100vh;
+  // }
 }
 
 #app {
@@ -102,7 +112,13 @@ html {
   z-index: 5;
 }
 
-body::after{
-  position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
-  // content: url("../assets/images/ball-ltr-ei.png") url("../assets/images/ball-ltr-eo.png") url("../assets/images/ball-ttd-eo.png");   // load images
-}
+// body::after{
+//   position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
+//   // content: url("../assets/images/ball-ltr-ei.png") url("../assets/images/ball-ltr-eo.png") url("../assets/images/ball-ttd-eo.png");   // load images
+// }
+
+// ::-webkit-scrollbar {
+//   @media (min-width: 1280px) {
+//     display: none;
+//   }
+// }

@@ -36,8 +36,8 @@
     height: calc(100vh - 75rem);
   }
   @media (max-width: 767px) {
-    height: calc(100vh - 60px);
-    height: calc(var(--app-height) - 60px);
+    height: calc(90vh - 60px);
+    // height: calc(var(--app-height) - 60px);
     // min-height: auto;
   }
   // @media (max-width: 1279px) {
@@ -65,9 +65,11 @@
     // background-color: $temp2;
   }
   &__decor {
+    cursor: pointer;
     position: absolute;
     bottom: 70px;
     left: 15px;
+  
     @media (min-width: 1760px) and (max-height: 650px) {
       bottom: 40px;
     }
@@ -219,7 +221,7 @@
   }
   &__text {
     flex-shrink: 0;
-    max-width: 775px;
+    // max-width: 775px;
     font-family: $second-font;
     font-weight: normal;
     font-size: 16px;
@@ -234,7 +236,7 @@
       line-height: 16px;
     }
     @media (min-width: 1280px) and (max-width: 1760px) {
-      max-width: 775rem;
+      // max-width: 775rem;
       font-size: 16rem;
       line-height: 21rem;
     }
@@ -260,7 +262,7 @@
     @media (min-width: 768px) and (max-width: 1279px) {
       font-size: 18rem;
       line-height: 21rem;
-      max-width: 760rem;
+      // max-width: 760rem;
     }
     @media (min-width: 768px) and (max-width: 1279px) and (max-height: 900px) {
       font-size: 15rem;
@@ -279,6 +281,11 @@
       max-width: 335px;
       font-size: 13px;
       line-height: 16px;
+    }
+    br {
+      @media (max-width: 767px) {
+      display: none;
+    }
     }
     // @media (min-width: 768px) and (max-height: 800px) {
     //   font-size: 14px;
