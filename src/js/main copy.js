@@ -202,23 +202,9 @@ let myFullpage = new fullpage('#app', {
     sectionSelector: '.js-section',
     responsiveHeight: 0,
     normalScrollElements: ".js-ball",
-    // responsiveWidth: 1280,
-    afterRender: () => {
-      console.log("render");
-    },
+    responsiveWidth: 1280,
+    
     afterLoad: async (origin, destination, direction) => {
-      // if (window.innerWidth < 1280 && destination.index == 0) {
-      //   fullpage_api.setResponsive(false);
-      //   console.log("to 0");
-      // }
-      // if (window.innerWidth < 1280 && destination.index == 0) {
-      //   fullpage_api.setResponsive(true);
-      //   console.log("from 0");
-      // }
-      // if (window.innerWidth < 1280 && destination.index == 0) {
-      //   fullpage_api.setResponsive(false);
-      //   console.log("to 0");
-      // }
       if (window.innerWidth < 1280) {return;}
       document.querySelectorAll('.js-section.active [data-aos]').forEach(($el) => {$el.classList.add("aos-animate")});
       fullpage_api.setAllowScrolling(false);
@@ -228,13 +214,9 @@ let myFullpage = new fullpage('#app', {
       $ball.addEventListener("click", ballClickHandler);
     },
     onLeave: async (origin, destination, direction) => {
-      // if (window.innerWidth < 1280 && origin.index == 0) {
-      //   fullpage_api.setResponsive(true);
-      //   console.log("from 0");
-      // }
-      
       // console.log(origin.index, destination.index, direction);
       if (window.innerWidth < 1280) {return;}
+      
       // const windowHeight = window.innerHeight;
       // $ball.style.transform = `translate3d(0, ${windowHeight}px, 0)`;
       // await new Promise(resolve => {setTimeout( () => resolve(), 10);});
@@ -344,14 +326,14 @@ let myFullpage = new fullpage('#app', {
 // fullpage_api.setKeyboardScrolling(false);
 
 
-if (window.innerWidth < 1280) {fullpage_api.setResponsive(true);}
-window.addEventListener("resize", (e) => {
-  if (window.innerWidth < 1280) {
-    fullpage_api.setResponsive(true);
-  } else {
-    fullpage_api.setResponsive(false);
-  }
-});
+// if (window.innerWidth < 1280) {fullpage_api.setResponsive(true);}
+// window.addEventListener("resize", (e) => {
+//   if (window.innerWidth < 1280) {
+//     fullpage_api.setResponsive(true);
+//   } else {
+//     fullpage_api.setResponsive(false);
+//   }
+// });
 
 /* arrow buttons */
 const $arrowDownButton = document.querySelector(".js-arrow-down-button");
@@ -388,27 +370,3 @@ AOS.init({
 
 document.querySelectorAll('[data-aos]').forEach(($el) => { $el.classList.add("aos-init"); });
 window.addEventListener('load', AOS.refresh);
-
-
-
-
-
-
-
-
-
-
-///МЕТРИКИ
-
-const logo_zictop = document.querySelector(".js-logo_zictop");
-const logo_zictop_metrika_event = (e) => {
-  // ym(42193809, 'reachGoal', 'logo_zictop');
-  gtag('event', 'logo_zictop', {
-    // 'event_category': "bbb",
-    // 'event_label': "ccc",
-    // 'value': 10,
-  });
-  
-} 
-logo_zictop.addEventListener("click", logo_zictop_metrika_event);
-

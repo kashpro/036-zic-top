@@ -17,6 +17,60 @@ html(lang="ru-RU")
     <link rel="preload" href="./assets/images/ball-ltr-ei.png" as="image"> 
     <link rel="preload" href="./assets/images/ball-ltr-eo.png" as="image">
     <link rel="preload" href="./assets/images/ball-ttd-eo.png" as="image">
+    //- <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-88014128-34")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-88014128-34');
+      setTimeout(function(){
+        gtag('event', location.pathname, {
+        'event_category': 'Не отказ'
+        });
+      }, 10000);
+    
+      //- <!-- Yandex.Metrika counter -->
+    script.
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(42193809, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        trackHash:true,
+        webvisor:true,
+      });
+    <noscript><div><img src="https://mc.yandex.ru/watch/42193809" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
+      //- <!-- /Yandex.Metrika counter -->
+
+      //- <!-- Top100 (Kraken) Counter -->
+    script.
+      (function (w, d, c) {
+        (w[c] = w[c] || []).push(function() {
+          var options = {
+              project: 7482706,
+          };
+          try {
+            w.top100Counter = new top100(options);
+          } catch(e) { }
+        });
+        var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src =
+        (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
+        if (w.opera == "[object Opera]") {
+          d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+      })(window, document, "_top100q");
+    <noscript><img src="//counter.rambler.ru/top100.cnt?pid=7482706" alt="Топ-100"/></noscript>
+    //- <!-- END Top100 (Kraken) Counter -->
+
 body
   #app
 
@@ -25,7 +79,7 @@ body
     .js-section.js-section-100vh
       header.header.group1__header
         .container.header__container
-          a.header__logo1(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank")
+          a.header__logo1.js-logo_zictop(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank")
             img(src=require("@/assets/images/zictop_logo.svg"))
           .header__logo2
             img(src=require("@/assets/images/skzic_logo.svg"))
@@ -282,8 +336,8 @@ body
               .test__close.js-test-close-button
           span.main__year.main__year--gold(data-aos="fade-up" data-aos-delay="100") 2018
           h3.main__head.main__head--gold(data-aos="fade-up" data-aos-delay="200") Начало сотрудничества «Барселоны» с ZIC
-          p.main__text.main__text--mb(data-aos="fade-up" data-aos-delay="300") В 2018 году случилось ещё одно важное событие для «Барселоны». Каталонский клуб заключил спонсорский контракт с брендом ZIC, принадлежащим южнокорейской компании SC Lubricant, одному из крупнейших производителей смазочных материалов в мире. Соглашение охватывает пять стран, в том числе Россию. В нашей стране моторное масло SK ZIC было названо «Национальным брендом» ещё в 2017 году.  
-          p.main__text(data-aos="fade-up" data-aos-delay="400") «Благодаря спонсорству мы планируем повысить узнаваемость наших премиальных продуктов и глобальные продажи, а также осведомлённость болельщиков о лучшем футбольном клубе мира», — отметили в SK Lubricant. В свою очередь сине-гранатовые сделали большой шаг на пути освоении азиатского рынка.
+          p.main__text.main__text--mb(data-aos="fade-up" data-aos-delay="300") В 2018 году случилось ещё одно важное событие для «Барселоны». Каталонский клуб заключил спонсорский контракт с брендом ZIC, принадлежащим южнокорейской компании SC Lubricants, одному из крупнейших производителей смазочных материалов в мире. Соглашение охватывает пять стран, в том числе Россию. В нашей стране моторное масло SK ZIC было названо «Национальным брендом» ещё в 2017 году.  
+          p.main__text(data-aos="fade-up" data-aos-delay="400") «Благодаря спонсорству мы планируем повысить узнаваемость наших премиальных продуктов и глобальные продажи, а также осведомлённость болельщиков о лучшем футбольном клубе мира», — отметили в SK Lubricants. В свою очередь сине-гранатовые сделали большой шаг на пути освоении азиатского рынка.
           button.btn.main__btn.js-test-button(data-num="6" data-aos="fade-up" data-aos-delay="500") Пройти тест
         .main__box2
           img(src=require("@/assets/images/main_07.jpg") data-aos="fade-up" data-aos-delay="0")
