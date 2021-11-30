@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Ruda';
-  src: local('Ruda ExtraBold'), local('Ruda-ExtraBold'), url('../assets/fonts/Ruda-ExtraBold.woff2') format('woff2');
+  // src: local('Ruda ExtraBold'), local('Ruda-ExtraBold'), url('../assets/fonts/Ruda-ExtraBold.woff2') format('woff2');
+  src: url('../assets/fonts/Ruda-ExtraBold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: 'Ruda';
-  src: local('Ruda Bold'), local('Ruda-Bold'), url('../assets/fonts/Ruda-Bold.woff2') format('woff2');
+  // src: local('Ruda Bold'), local('Ruda-Bold'), url('../assets/fonts/Ruda-Bold.woff2') format('woff2');
+  src: url('../assets/fonts/Ruda-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -16,7 +18,8 @@
 
 @font-face {
   font-family: 'Ruda';
-  src: local('Ruda Black'), local('Ruda-Black'), url('../assets/fonts/Ruda-Black.woff2') format('woff2');
+  // src: local('Ruda Black'), local('Ruda-Black'), url('../assets/fonts/Ruda-Black.woff2') format('woff2');
+  src: url('../assets/fonts/Ruda-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -24,7 +27,8 @@
 
 @font-face {
   font-family: 'Ruda';
-  src: local('Ruda Medium'), local('Ruda-Medium'), url('../assets/fonts/Ruda-Medium.woff2') format('woff2');
+  // src: local('Ruda Medium'), local('Ruda-Medium'), url('../assets/fonts/Ruda-Medium.woff2') format('woff2');
+  src: url('../assets/fonts/Ruda-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -32,7 +36,8 @@
 
 @font-face {
   font-family: 'Ruda';
-  src: local('Ruda Regular'), local('Ruda-Regular'), url('../assets/fonts/Ruda-Regular.woff2') format('woff2');
+  // src: local('Ruda Regular'), local('Ruda-Regular'), url('../assets/fonts/Ruda-Regular.woff2') format('woff2');
+  src: url('../assets/fonts/Ruda-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -40,7 +45,8 @@
 
 @font-face {
   font-family: 'Ruda';
-  src: local('Ruda SemiBold'), local('Ruda-SemiBold'), url('../assets/fonts/Ruda-SemiBold.woff2') format('woff2');
+  // src: local('Ruda SemiBold'), local('Ruda-SemiBold'), url('../assets/fonts/Ruda-SemiBold.woff2') format('woff2');
+  src: url('../assets/fonts/Ruda-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -54,7 +60,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter Black'), local('Inter-Black'),
+  src: //local('Inter Black'), local('Inter-Black'),
       url('../assets/fonts/Inter-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
@@ -63,7 +69,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter ExtraBold'), local('Inter-ExtraBold'),
+  src: //local('Inter ExtraBold'), local('Inter-ExtraBold'),
       url('../assets/fonts/Inter-ExtraBold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
@@ -72,7 +78,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter Bold'), local('Inter-Bold'),
+  src: //local('Inter Bold'), local('Inter-Bold'),
       url('../assets/fonts/Inter-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
@@ -81,7 +87,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter ExtraLight'), local('Inter-ExtraLight'),
+  src: //local('Inter ExtraLight'), local('Inter-ExtraLight'),
       url('../assets/fonts/Inter-ExtraLight.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
@@ -90,7 +96,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter Light'), local('Inter-Light'),
+  src: //local('Inter Light'), local('Inter-Light'),
       url('../assets/fonts/Inter-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
@@ -99,7 +105,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter Medium'), local('Inter-Medium'),
+  src: //local('Inter Medium'), local('Inter-Medium'),
       url('../assets/fonts/Inter-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
@@ -108,7 +114,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter Thin'), local('Inter-Thin'),
+  src: //local('Inter Thin'), local('Inter-Thin'),
       url('../assets/fonts/Inter-Thin.woff2') format('woff2');
   font-weight: 100;
   font-style: normal;
@@ -117,7 +123,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter SemiBold'), local('Inter-SemiBold'),
+  src: //local('Inter SemiBold'), local('Inter-SemiBold'),
       url('../assets/fonts/Inter-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
@@ -126,7 +132,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter Regular'), local('Inter-Regular'),
+  src: //local('Inter Regular'), local('Inter-Regular'),
       url('../assets/fonts/Inter-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;

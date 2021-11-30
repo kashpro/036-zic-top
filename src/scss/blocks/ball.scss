@@ -78,6 +78,27 @@
     animation-fill-mode: forwards;
     animation-play-state: paused;
   }
+  &--down-to-center {
+    background-image: url("../assets/images/ball-ttd-eo.png");
+    animation-name: down-to-center;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+  }
+  &--center-to-top {
+    background-image: url("../assets/images/ball-ttd-eo.png");
+    animation-name: center-to-top;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+  }
+
   &--left-to-center {
     background-image: url("../assets/images/ball-ltr-eo.png");
     animation-name: left-to-center;
@@ -98,6 +119,26 @@
     animation-fill-mode: forwards;
     animation-play-state: paused;
   }
+  &--right-to-center {
+    background-image: url("../assets/images/ball-ltr-eo.png");
+    animation-name: right-to-center;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+  }
+  &--center-to-left {
+    background-image: url("../assets/images/ball-ltr-ei.png");
+    animation-name: center-to-left;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+  }
   &--animate {
     animation-play-state: running;
   }
@@ -109,249 +150,48 @@
     opacity: 0;
   }
   0% {
-    // background-image: url("../assets/images/ball-ttd-eo.png");
     background-position: 0 0%;
     animation-timing-function: steps(25);
   }
-  // 0% {
-  //   background-position: 0 0%;
-  //   animation-timing-function: step-start;
-  // }
-  // 4% {
-  //   background-position: 0 4%;
-  //   animation-timing-function: step-start;
-  // }
-  // 8% {
-  //   background-position: 0 8%;
-  //   animation-timing-function: step-start;
-  // }
-  // 12% {
-  //   background-position: 0 12%;
-  //   animation-timing-function: step-start;
-  // }
-  // 16% {
-  //   background-position: 0 16%;
-  //   animation-timing-function: step-start;
-  // }
-  // 20% {
-  //   background-position: 0 20%;
-  //   animation-timing-function: step-start;
-  // }
-  // 24% {
-  //   background-position: 0 24%;
-  //   animation-timing-function: step-start;
-  // }
-  // 28% {
-  //   background-position: 0 28%;
-  //   animation-timing-function: step-start;
-  // }
   30% {
     opacity: 1;
   }
-  // 32% {
-  //   background-position: 0 32%;
-  //   animation-timing-function: step-start;
-  // }
-  // 36% {
-  //   background-position: 0 36%;
-  //   animation-timing-function: step-start;
-  // }
-  // 40% {
-  //   background-position: 0 40%;
-  //   animation-timing-function: step-start;
-  // }
-  // 44% {
-  //   background-position: 0 44%;
-  //   animation-timing-function: step-start;
-  // }
-  // 48% {
-  //   background-position: 0 48%;
-  //   animation-timing-function: step-start;
-  // }
-  // 52% {
-  //   background-position: 0 52%;
-  //   animation-timing-function: step-start;
-  // }
-  // 56% {
-  //   background-position: 0 56%;
-  //   animation-timing-function: step-start;
-  // }
-  // 60% {
-  //   background-position: 0 60%;
-  //   animation-timing-function: step-start;
-  // }
-  // 64% {
-  //   background-position: 0 64%;
-  //   animation-timing-function: step-start;
-  // }
-  // 68% {
-  //   background-position: 0 68%;
-  //   animation-timing-function: step-start;
-  // }
-  // 72% {
-  //   background-position: 0 72%;
-  //   animation-timing-function: step-start;
-  // }
-  // 76% {
-  //   background-position: 0 76%;
-  //   animation-timing-function: step-start;
-  // }
-  // 80% {
-  //   background-position: 0 80%;
-  //   animation-timing-function: step-start;
-  // }
-  // 84% {
-  //   background-position: 0 84%;
-  //   animation-timing-function: step-start;
-  // }
-  // 88% {
-  //   background-position: 0 88%;
-  //   animation-timing-function: step-start;
-  // }
-  // 92% {
-  //   background-position: 0 92%;
-  //   animation-timing-function: step-start;
-  // }
-  // 96% {
-  //   background-position: 0 96%;
-  //   animation-timing-function: step-start;
-  // }
   100% {
     transform: translate(-50%, 0);
     opacity: 1;
   }
-  // 100% {
-  //   background-position: 0 100%;
-  //   animation-timing-function: step-start;
-  // }
   100% {
     background-position: 0 100%;
   }
-  
+}
+
+@keyframes down-to-center {
+  0% {
+    transform: translate(-50%, 100vh);
+    opacity: 0;
+  }
+  0% {
+    background-position: 0 100%;
+    animation-timing-function: steps(25);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    background-position: 0 0%;
+  }
 }
 
 @keyframes center-to-down {
-  // 0% {
-  //   transform: translate(-50%, 0);
-  //   opacity: 1;
-  // }
-  // 0% {
-  //   background-position: 0 0%;
-  //   animation-timing-function: step-start;
-  // }
-  // 4% {
-  //   background-position: 0 4%;
-  //   animation-timing-function: step-start;
-  // }
-  // 8% {
-  //   background-position: 0 8%;
-  //   animation-timing-function: step-start;
-  // }
-  // 12% {
-  //   background-position: 0 12%;
-  //   animation-timing-function: step-start;
-  // }
-  // 16% {
-  //   background-position: 0 16%;
-  //   animation-timing-function: step-start;
-  // }
-  // 20% {
-  //   background-position: 0 20%;
-  //   animation-timing-function: step-start;
-  // }
-  // 24% {
-  //   background-position: 0 24%;
-  //   animation-timing-function: step-start;
-  // }
-  // 28% {
-  //   background-position: 0 28%;
-  //   animation-timing-function: step-start;
-  // }
-  // 32% {
-  //   background-position: 0 32%;
-  //   animation-timing-function: step-start;
-  // }
-  // 36% {
-  //   background-position: 0 36%;
-  //   animation-timing-function: step-start;
-  // }
-  // 40% {
-  //   background-position: 0 40%;
-  //   animation-timing-function: step-start;
-  // }
-  // 44% {
-  //   background-position: 0 44%;
-  //   animation-timing-function: step-start;
-  // }
-  // 48% {
-  //   background-position: 0 48%;
-  //   animation-timing-function: step-start;
-  // }
-  // 52% {
-  //   background-position: 0 52%;
-  //   animation-timing-function: step-start;
-  // }
-  // 56% {
-  //   background-position: 0 56%;
-  //   animation-timing-function: step-start;
-  // }
-  // 60% {
-  //   background-position: 0 60%;
-  //   animation-timing-function: step-start;
-  // }
-  // 64% {
-  //   background-position: 0 64%;
-  //   animation-timing-function: step-start;
-  // }
-  // 68% {
-  //   background-position: 0 68%;
-  //   animation-timing-function: step-start;
-  // }
-  // 70% {
-  //   opacity: 1;
-  // }
-  // 72% {
-  //   background-position: 0 72%;
-  //   animation-timing-function: step-start;
-  // }
-  // 76% {
-  //   background-position: 0 76%;
-  //   animation-timing-function: step-start;
-  // }
-  // 80% {
-  //   background-position: 0 80%;
-  //   animation-timing-function: step-start;
-  // }
-  // 84% {
-  //   background-position: 0 84%;
-  //   animation-timing-function: step-start;
-  // }
-  // 88% {
-  //   background-position: 0 88%;
-  //   animation-timing-function: step-start;
-  // }
-  // 92% {
-  //   background-position: 0 92%;
-  //   animation-timing-function: step-start;
-  // }
-  // 96% {
-  //   background-position: 0 96%;
-  //   animation-timing-function: step-start;
-  // }
-  // 100% {
-  //   transform: translate(-50%, 100vh);
-  //   opacity: 0;
-  // }
-  // 100% {
-  //   background-position: 0 100%;
-  //   animation-timing-function: step-start;
-  // }
   0% {
     transform: translate(-50%, 0);
     opacity: 1;
   }
   0% {
-    // background-image: url("../assets/images/ball-ttd-eo.png");
     background-position: 0 0%;
     animation-timing-function: steps(25);
   }
@@ -367,6 +207,26 @@
   }
 }
 
+@keyframes center-to-top {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  0% {
+    background-position: 0 100%;
+    animation-timing-function: steps(25);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -100vh);
+    opacity: 0;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
 
 @keyframes left-to-center {
   0% {
@@ -374,7 +234,6 @@
     opacity: 0;
   }
   0% {
-    // background-image: url("../assets/images/ball-ttd-eo.png");
     background-position: 0 0%;
     animation-timing-function: steps(25);
   }
@@ -390,6 +249,26 @@
   }
 }
 
+@keyframes right-to-center {
+  0% {
+    transform: translate(100vw, 0);
+    opacity: 0;
+  }
+  0% {
+    background-position: 0 100%;
+    animation-timing-function: steps(25);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    background-position: 0 0%;
+  }
+}
 
 
 @keyframes center-to-right {
@@ -398,7 +277,6 @@
     opacity: 1;
   }
   0% {
-    // background-image: url("../assets/images/ball-ttd-eo.png");
     background-position: 0 0%;
     animation-timing-function: steps(25);
   }
@@ -411,5 +289,26 @@
   }
   100% {
     background-position: 0 100%;
+  }
+}
+
+@keyframes center-to-left {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  0% {
+    background-position: 0 100%;
+    animation-timing-function: steps(25);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100vw, 0);
+    opacity: 0;
+  }
+  100% {
+    background-position: 0 0%;
   }
 }

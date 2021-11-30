@@ -12,11 +12,14 @@ html(lang="ru-RU")
     link(rel="apple-touch-icon", sizes="180x180", href="./apple-touch-icon.png")
     link(rel="manifest", href="./site.webmanifest")
     link(rel="icon", href="./favicon.ico")
+    link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5")
     title Zic Top
+
     //- пути не обрабатываются вебпаком
     <link rel="preload" href="./assets/images/ball-ltr-ei.png" as="image"> 
     <link rel="preload" href="./assets/images/ball-ltr-eo.png" as="image">
     <link rel="preload" href="./assets/images/ball-ttd-eo.png" as="image">
+    
     //- <!-- Global site tag (gtag.js) - Google Analytics -->
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-88014128-34")
     script.
@@ -79,22 +82,22 @@ body
     .js-section.js-section-100vh
       header.header.group1__header
         .container.header__container
-          a.header__logo1.js-logo_zictop(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank")
+          a.header__logo1.ev-logo_zictop(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank")
             img(src=require("@/assets/images/zictop_logo.svg"))
           .header__logo2
             img(src=require("@/assets/images/skzic_logo.svg"))
-          a.header__logo3(href="https://www.championat.com/" target="blank")
+          a.header__logo3.ev-logo_chempionat(href="https://www.championat.com/" target="blank")
             img(src=require("@/assets/images/champ_logo.png"))
       .title
         .container.title__container
-          .decor.title__decor.js-title-decor(data-aos="fade-right" data-aos-delay="900" data-aos-anchor-placement="top-bottom")
+          .decor.title__decor.js-title-decor.ev-logo_sku_1(data-aos="fade-right" data-aos-delay="900" data-aos-anchor-placement="top-bottom")
             img(src=require("@/assets/images/zic_bottle2.png"))
             span TOP состав - 
             span основа победы!
           h2.title__head(data-aos="fade-right" data-aos-delay="200") Каждый топ-клуб —<br> это большая история<br> и миллионы болельщиков.
-          p.title__text.title__text--mb(data-aos="fade-right" data-aos-delay="400") В «Барселоне» к команде относятся особенно трепетно. Девиз Mes que un club — не просто<br> пафосные слова. Для Каталонии «Барса» действительно больше, чем клуб. Это самый<br> узнаваемый в мире символ свободолюбивой автономии, предмет её безграничной гордости.<br> И гордости совершенно обоснованной.
-          p.title__text(data-aos="fade-right" data-aos-delay="600") «Чемпионат» совместно с ZIC — производителем премиальных моторных масел и официальным<br> спонсором ФК «Барселона» — представляет главные моменты в истории каталонского гранда.<br> Проникнитесь величием одного из самых популярных и успешных клубов планеты.
-          a.arrow-link.title__link.js-arrow-down-button
+          p.title__text.title__text--mb(data-aos="fade-right" data-aos-delay="400") В «Барселоне» к команде относятся особенно трепетно. Девиз Mes que un club — не просто<br>&nbsp;пафосные слова. Для Каталонии «Барса» действительно больше, чем клуб. Это самый<br>&nbsp;узнаваемый в мире символ свободолюбивой автономии, предмет её безграничной гордости.<br>&nbsp;И гордости совершенно обоснованной.
+          p.title__text(data-aos="fade-right" data-aos-delay="600") «Чемпионат» совместно с ZIC — производителем премиальных моторных масел и официальным<br>&nbsp;спонсором ФК «Барселона» — представляет главные моменты в истории каталонского гранда.<br>&nbsp;Проникнитесь величием одного из самых популярных и успешных клубов планеты.
+          a.arrow-link.title__link.js-arrow-down-button.ev-icon_next
             <svg width="45" height="45" fill="none" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
               <circle fill="transparent" cx="22.5" cy="22.5" r="22" transform="rotate(90 22.5 22.5)" stroke="white"/>
               <path d="M22.1464 32.2593C22.3417 32.4545 22.6583 32.4545 22.8535 32.2593L26.0355 29.0773C26.2308 28.882 26.2308 28.5654 26.0355 28.3702C25.8403 28.1749 25.5237 28.1749 25.3284 28.3702L22.5 31.1986L19.6716 28.3702C19.4763 28.1749 19.1597 28.1749 18.9645 28.3702C18.7692 28.5654 18.7692 28.882 18.9645 29.0773L22.1464 32.2593ZM22 13.0942L22 31.9057L23 31.9057L23 13.0942L22 13.0942Z" fill="#D8A745"/>
@@ -104,27 +107,27 @@ body
 
     .container.main__container.js-section
       .main__item
-        a.decor.main__decor.main__decor--1st(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
+        a.decor.main__decor.main__decor--1st.ev-logo_sku(data-num="2" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span TOP
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="1")
             .test__content
               .test__ques Где проводила первые матчи «Барселона»?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label.js-right-label Велодром
+                  .test__label.js-test-label.js-right-label(data-num="1") Велодром
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p Это был велодром района Бонанова.
                 li.test__item
-                  .test__label.js-test-label Ипподром
+                  .test__label.js-test-label(data-num="2") Ипподром
                 li.test__item
-                  .test__label.js-test-label Арена для корриды
+                  .test__label.js-test-label(data-num="3") Арена для корриды
                 li.test__item
-                  .test__label.js-test-label Поле для гольфа
+                  .test__label.js-test-label(data-num="4") Поле для гольфа
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
 
           span.main__year(data-aos="fade-up" data-aos-delay="100") 1899
@@ -139,27 +142,27 @@ body
 
     .container.main__container.js-section
       .main__item.main__item--reverse
-        a.decor.main__decor.main__decor--2nd(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
+        a.decor.main__decor.main__decor--2nd.ev-logo_sku(data-num="3" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span TOP Состав
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="2")
             .test__content
               .test__ques Кто из российских футболистов выступал за «Барсу»?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label Андрей Аршавин
+                  .test__label.js-test-label(data-num="1") Андрей Аршавин
                 li.test__item
-                  .test__label.js-test-label.js-right-label Игорь Корнеев
+                  .test__label.js-test-label.js-right-label(data-num="2") Игорь Корнеев
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p Лишь один русский играл — и забивал! — за «Барсу» на «Камп Ноу»: Корнеев в середине 1990-х. 
                 li.test__item
-                  .test__label.js-test-label Александр Мостовой
+                  .test__label.js-test-label(data-num="3") Александр Мостовой
                 li.test__item
-                  .test__label.js-test-label Игорь Шалимов
+                  .test__label.js-test-label(data-num="4") Игорь Шалимов
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
           span.main__year(data-aos="fade-up" data-aos-delay="100") 1957
           h3.main__head(data-aos="fade-up" data-aos-delay="200") Открытие «Камп Ноу»
@@ -173,28 +176,28 @@ body
 
     .container.main__container.js-section
       .main__item
-        a.decor.main__decor.main__decor--3rd(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
+        a.decor.main__decor.main__decor--3rd.ev-logo_sku(data-num="4" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span ТОР состав —
           span основа
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="3")
             .test__content
               .test__ques Кто из игроков «Барселоны» первым получил «Золотой мяч»?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label.js-right-label Луис Суарес
+                  .test__label.js-test-label.js-right-label(data-num="1") Луис Суарес
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p Луис Суарес, да не тот! В 1960-х в «Барсе» блистал полный тёзка звезды современной сборной Уругвая. 
                 li.test__item
-                  .test__label.js-test-label Йохан Круифф
+                  .test__label.js-test-label(data-num="2") Йохан Круифф
                 li.test__item
-                  .test__label.js-test-label Христо Стоичков
+                  .test__label.js-test-label(data-num="3") Христо Стоичков
                 li.test__item
-                  .test__label.js-test-label Роналдиньо
+                  .test__label.js-test-label(data-num="4") Роналдиньо
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
           span.main__year(data-aos="fade-up" data-aos-delay="100") 1980
           h3.main__head(data-aos="fade-up" data-aos-delay="200") Рекордный трансфер Марадоны и «непотопляемый» Нуньес
@@ -208,28 +211,28 @@ body
 
     .container.main__container.js-section
       .main__item.main__item--reverse
-        a.decor.main__decor.main__decor--4th(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
+        a.decor.main__decor.main__decor--4th.ev-logo_sku(data-num="5" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span TOP состав —
           span основа победы!
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="4")
             .test__content
               .test__ques Кто забил исторический гол в финале Кубка чемпионов-1992?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label Хосеп Гвардиола
+                  .test__label.js-test-label(data-num="1") Хосеп Гвардиола
                 li.test__item
-                  .test__label.js-test-label Хосе Мария Бакеро
+                  .test__label.js-test-label(data-num="2") Хосе Мария Бакеро
                 li.test__item
-                  .test__label.js-test-label Луис Энрике
+                  .test__label.js-test-label(data-num="3") Луис Энрике
                 li.test__item
-                  .test__label.js-test-label.js-right-label Рональд Куман
+                  .test__label.js-test-label.js-right-label(data-num="4") Рональд Куман
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p Как можно забыть пушку Кумана в игре с итальянцами!
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
           span.main__year(data-aos="fade-up" data-aos-delay="100") 1988-1996
           h3.main__head(data-aos="fade-up" data-aos-delay="200") Эра Круиффа
@@ -243,27 +246,27 @@ body
 
     .container.main__container.js-section
       .main__item
-        a.decor.main__decor.main__decor--1st(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
+        a.decor.main__decor.main__decor--1st.ev-logo_sku(data-num="6" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span TOP
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="5")
             .test__content
               .test__ques Какое прозвище у Месси?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label Жук
+                  .test__label.js-test-label(data-num="1") Жук
                 li.test__item
-                  .test__label.js-test-label Муравей
+                  .test__label.js-test-label(data-num="2") Муравей
                 li.test__item
-                  .test__label.js-test-label.js-right-label Блоха
+                  .test__label.js-test-label.js-right-label(data-num="3") Блоха
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p La pulga — блоха по-испански!
                 li.test__item
-                  .test__label.js-test-label Комар
+                  .test__label.js-test-label(data-num="4") Комар
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
           span.main__year(data-aos="fade-up" data-aos-delay="100") 2003-2008
           h3.main__head(data-aos="fade-up" data-aos-delay="200") Пришествие Месси и «дрим-тим» Райкарда
@@ -277,27 +280,27 @@ body
 
     .container.main__container.js-section
       .main__item.main__item--reverse
-        a.decor.main__decor.main__decor--2nd(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
+        a.decor.main__decor.main__decor--2nd.ev-logo_sku(data-num="7" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span ТОР состав
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="6")
             .test__content
               .test__ques На какой позиции играл в «Барселоне» сам Гвардиола?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label Вратарь
+                  .test__label.js-test-label(data-num="1") Вратарь
                 li.test__item
-                  .test__label.js-test-label Защитник
+                  .test__label.js-test-label(data-num="2") Защитник
                 li.test__item
-                  .test__label.js-test-label.js-right-label Полузащитник
+                  .test__label.js-test-label.js-right-label(data-num="3") Полузащитник
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p Пеп с юности привык быть в центре — поля и внимания.
                 li.test__item
-                  .test__label.js-test-label Нападающий
+                  .test__label.js-test-label(data-num="4") Нападающий
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
           span.main__year(data-aos="fade-up" data-aos-delay="100") 2008-2012
           h3.main__head(data-aos="fade-up" data-aos-delay="200") 14 трофеев Гвардиолы
@@ -311,32 +314,32 @@ body
 
     .container.main__container.js-section
       .main__item
-        a.decor.main__decor.main__decor--3rd(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
+        a.decor.main__decor.main__decor--3rd.ev-logo_sku(data-num="8" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-right" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span TOP состав —
           span основа
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="7")
             .test__content
               .test__ques Сколько футбольных полей можно разместить на территории завода SK Lubricants в Ульсане?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label 0
+                  .test__label.js-test-label(data-num="1") 0
                 li.test__item
-                  .test__label.js-test-label 100
+                  .test__label.js-test-label(data-num="2") 100
                 li.test__item
-                  .test__label.js-test-label 500
+                  .test__label.js-test-label(data-num="3") 500
                 li.test__item
-                  .test__label.js-test-label.js-right-label 1000+
+                  .test__label.js-test-label.js-right-label(data-num="4") 1000+
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p Площадь крупнейшего в мире нефтеперерабатывающего завода, где производят ZIC — более 8 км². Это больше 1000 футбольных полей!
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
           span.main__year.main__year--gold(data-aos="fade-up" data-aos-delay="100") 2018
           h3.main__head.main__head--gold(data-aos="fade-up" data-aos-delay="200") Начало сотрудничества «Барселоны» с ZIC
-          p.main__text.main__text--mb(data-aos="fade-up" data-aos-delay="300") В 2018 году случилось ещё одно важное событие для «Барселоны». Каталонский клуб заключил спонсорский контракт с брендом ZIC, принадлежащим южнокорейской компании SC Lubricants, одному из крупнейших производителей смазочных материалов в мире. Соглашение охватывает пять стран, в том числе Россию. В нашей стране моторное масло SK ZIC было названо «Национальным брендом» ещё в 2017 году.  
+          p.main__text.main__text--mb(data-aos="fade-up" data-aos-delay="300") В 2018 году случилось ещё одно важное событие для «Барселоны». Каталонский клуб заключил спонсорский контракт с брендом ZIC, принадлежащим южнокорейской компании SK Lubricants, одному из крупнейших производителей смазочных материалов в мире. Соглашение охватывает пять стран, в том числе Россию. В нашей стране моторное масло SK ZIC было названо «Национальным брендом» ещё в 2017 году.  
           p.main__text(data-aos="fade-up" data-aos-delay="400") «Благодаря спонсорству мы планируем повысить узнаваемость наших премиальных продуктов и глобальные продажи, а также осведомлённость болельщиков о лучшем футбольном клубе мира», — отметили в SK Lubricants. В свою очередь сине-гранатовые сделали большой шаг на пути освоении азиатского рынка.
           button.btn.main__btn.js-test-button(data-num="6" data-aos="fade-up" data-aos-delay="500") Пройти тест
         .main__box2
@@ -348,34 +351,34 @@ body
       .ball.js-ball
         //- img(src=require("@/assets/images/ball.png"))
       .main__item.main__item--reverse
-        a.decor.main__decor.main__decor--4th(href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
+        a.decor.main__decor.main__decor--4th.ev-logo_sku(data-num="9" href="http://zicoil.ru/top?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-left" data-aos-delay="0")
           img(src=require("@/assets/images/zic_bottle2.png"))
           span TOP состав —
           span основа победы!
         .main__box1
-          .test.main__test.test--hidden.js-test
+          .test.main__test.test--hidden.js-test(data-num="8")
             .test__content
               .test__ques Сколько европейских и мировых трофеев выиграла «Барса»?
               ul.test__list.js-test-list
                 li.test__item
-                  .test__label.js-test-label 10
+                  .test__label.js-test-label(data-num="1") 10
                 li.test__item
-                  .test__label.js-test-label 15
+                  .test__label.js-test-label(data-num="2") 15
                 li.test__item
-                  .test__label.js-test-label.js-right-label 20
+                  .test__label.js-test-label.js-right-label(data-num="3") 20
                   .test__right.test__right--hidden.js-right
                     span Верно
                     p 5 титулов европейского чемпионата + 4 Кубка + 3 Кубка ярмарок + 5 Суперкубков + 3 клубных ЧМ.
                 li.test__item
-                  .test__label.js-test-label 25
+                  .test__label.js-test-label(data-num="4") 25
               input.test__btn.js-answer-button(type="button" disabled="true" value="Ответить")
-              button.test__btn.test__btn--hidden.js-test-close-button.js-continue-button Продолжить 
+              button.test__btn.test__btn--hidden.js-continue-button Продолжить 
               .test__close.js-test-close-button
           span.main__year(data-aos="fade-up" data-aos-delay="100") 2014-2020
           h3.main__head(data-aos="fade-up" data-aos-delay="200") Великое трио MSN
           p.main__text.main__text--mb(data-aos="fade-up" data-aos-delay="300") Приобретение уругвайского супербомбардира Суареса в 2014 году позволило «Барселоне» сформировать, пожалуй, самую бронебойную атакующую связку в истории футбола. Испанские журналисты назвали её MSN — по заглавным буквам фамилий главных героев: Месси — Суарес — Неймар.
           p.main__text.main__text--mb(data-aos="fade-up" data-aos-delay="400") Было бы странно, если бы они не зажгли вместе. Пиком той незабываемой «Барсы» стал 2015 год. Разбив в финале итальянцев, «Барселона» в пятый раз завоевала Кубок чемпионов и получила оригинал навечно. 
-          p.main__text(data-aos="fade-up" data-aos-delay="500") В 2017 году тройка трансформировалась в дуэт Месси - Суарес, который ещё три сезона восхищал «Камп Ноу» и приводил в ужас соперников.Сообща друзья Луис и Лео настреляли кучу голов, выиграли ещё четыре трофея и только летом 2020-го расстались.
+          p.main__text(data-aos="fade-up" data-aos-delay="500") В 2017 году тройка трансформировалась в дуэт Месси - Суарес, который ещё три сезона восхищал «Камп Ноу» и приводил в ужас соперников. Сообща друзья Луис и Лео настреляли кучу голов, выиграли ещё четыре трофея и только летом 2020-го расстались.
           button.btn.main__btn.js-test-button(data-num="7" data-aos="fade-up" data-aos-delay="600") Пройти тест 
         .main__box2
           img(src=require("@/assets/images/main_08.jpg") data-aos="fade-up" data-aos-delay="0")
@@ -392,9 +395,9 @@ body
           span Устойчив к расходу на угар
         .team__image(data-aos="fade-up" data-aos-delay="200")
           img(src=require("@/assets/images/team.png"))
-        span.team__slogan(data-aos="fade-right" data-aos-delay="300") «ZIC TOP. Состав – основа победы»
-        a.team__btn.btn(href="https://zicoil.ru/top/?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top-bottom") Узнать больше
-        a.arrow-link.team__link.js-arrow-up-button
+        span.team__slogan(data-aos="fade-right" data-aos-delay="300") «ZIC TOP. Состав – основа победы!»
+        a.team__btn.btn.ev-button_final_learn_more(href="https://zicoil.ru/top/?utm_source=Championat&utm_medium=SP&utm_content=2021&utm_campaign=ZIC_TOP_NL" target="blank" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top-bottom") Узнать больше
+        a.arrow-link.team__link.js-arrow-up-button.ev-icon_up
           <svg width="45" height="45" fill="none" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
             <circle fill="transparent" cx="22.5" cy="22.5" r="22" transform="rotate(90 22.5 22.5)" stroke="white"/>
             <path d="M22.1464 32.2593C22.3417 32.4545 22.6583 32.4545 22.8535 32.2593L26.0355 29.0773C26.2308 28.882 26.2308 28.5654 26.0355 28.3702C25.8403 28.1749 25.5237 28.1749 25.3284 28.3702L22.5 31.1986L19.6716 28.3702C19.4763 28.1749 19.1597 28.1749 18.9645 28.3702C18.7692 28.5654 18.7692 28.882 18.9645 29.0773L22.1464 32.2593ZM22 13.0942L22 31.9057L23 31.9057L23 13.0942L22 13.0942Z" fill="#D8A745"/>

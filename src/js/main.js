@@ -21,7 +21,7 @@ appHeight();
 
 
 
-
+const isMob = window.innerWidth < 768 ? "mob_" : "";
 
 
 
@@ -44,29 +44,33 @@ appHeight();
 // /*---------------------------------------------------------------*/
 // /*---------------------------------------------------------------*/
 class Test {
-  hidden = true;
+  // hidden = true;
   $test = null;
-  $closeButtons = null;
+  $closeButton = null;
   $continueButton = null;
   $labels = null;
   $answerButton = null;
   $list = null;
   $userAnswer = null;
   $scrollTop = null;
+  num = null;
+  answer = null;
 
   constructor($test) {
     this.$test = $test;
-    this.$closeButtons = this.$test.querySelectorAll(".js-test-close-button");
+    this.$closeButton = this.$test.querySelector(".js-test-close-button");
     this.$continueButton = this.$test.querySelector(".js-continue-button");
     this.$labels = this.$test.querySelectorAll(".js-test-label");
     this.$right = this.$test.querySelector(".js-right");
     this.$answerButton = this.$test.querySelector(".js-answer-button");
     this.$list = this.$test.querySelector(".js-test-list");
+    this.num = this.$test.dataset.num;
     this.init();
   }
 
   init() {
-    this.$closeButtons.forEach( ($closeButton) => { $closeButton.addEventListener("click", this.closeButtonClickHandler); } );
+    this.$closeButton.addEventListener("click", this.closeButtonClickHandler);
+    this.$continueButton.addEventListener("click", this.continueButtonClickHandler);
     this.disableAnswerButton(); //заблочить кнопку "Ответить"
     this.$answerButton.classList.remove("test__btn--hidden");
     this.$list.addEventListener("click", this.listClickHandler);
@@ -74,17 +78,19 @@ class Test {
   }
   show() {
     this.$list.addEventListener("click", this.listClickHandler);
-    this.hidden = false;
+    // this.hidden = false;
     this.$test.classList.remove("test--hidden");
     if (window.innerWidth < 768) {
       this.scrollTop = window.pageYOffset;
       document.documentElement.classList.add("offscroll-y");
       document.body.classList.add("offscroll-y");
       // window.app.classList.add("offscroll-y");
+      
     }
+    gtag('event', `${isMob}button_test_${this.num}_start`);
   }
   hide() {
-    this.hidden = true;
+    // this.hidden = true;
     this.$test.classList.add("test--hidden");
     if (window.innerWidth < 768) {
       document.documentElement.classList.remove("offscroll-y");
@@ -99,7 +105,15 @@ class Test {
       $label.classList.remove("test__label--white");
     } ); // снять классы с ответов
   }
+  continueButtonClickHandler = (e) => {
+    this.closeTest();
+    gtag('event', `${isMob}button_test_${this.num}_next`);
+  }
   closeButtonClickHandler = (e) => {
+    this.closeTest();
+    gtag('event', `${isMob}button_test_${this.num}_exit`);
+  }
+  closeTest() {
     this.hide();
     this.$continueButton.classList.add("test__btn--hidden"); //скрыть кнопку "Продолжить"
     this.$answerButton.classList.remove("test__btn--hidden");
@@ -115,6 +129,7 @@ class Test {
   }
   listClickHandler = (e) => {
     if (e.target.classList.contains("js-test-label")) {
+      this.answer = e.target.dataset.num;
       this.$userAnswer = e.target;
       this.resetLabels();
       this.$userAnswer.classList.add("test__label--white");
@@ -130,7 +145,7 @@ class Test {
     this.$list.removeEventListener("click", this.listClickHandler); //запретить клики на ответы
     this.$answerButton.classList.add("test__btn--hidden");
     this.$continueButton.classList.remove("test__btn--hidden"); //показать кнопку "Продолжить"
-    
+    gtag('event', `${isMob}button_test_${this.num}_final_${this.answer}`);
   }
 }
 
@@ -228,86 +243,52 @@ let myFullpage = new fullpage('#app', {
       $ball.addEventListener("click", ballClickHandler);
     },
     onLeave: async (origin, destination, direction) => {
-      // if (window.innerWidth < 1280 && origin.index == 0) {
-      //   fullpage_api.setResponsive(true);
-      //   console.log("from 0");
-      // }
-      
-      // console.log(origin.index, destination.index, direction);
-      if (window.innerWidth < 1280) {return;}
-      // const windowHeight = window.innerHeight;
-      // $ball.style.transform = `translate3d(0, ${windowHeight}px, 0)`;
-      // await new Promise(resolve => {setTimeout( () => resolve(), 10);});
-      // const appTransfrorm = window.getComputedStyle(window.app).getPropertyValue("transform");
-      // const appTransformY = new DOMMatrix(appTransfrorm).f;
-      // console.log(appTransformY);
-      // console.log(window.innerHeight);
-      
-      // fullpage_api.setAllowScrolling(false);
-      $ball.removeEventListener("click", ballClickHandler);
+      function removeAnimationClasses() {
+        $ball.classList.remove("ball--center-to-down", "ball--top-to-center", "ball--center-to-right", "ball--left-to-center", "ball--down-to-center", "ball--center-to-top", "ball--center-to-left", "ball--right-to-center", "ball--animate");
+      }
+      if (window.innerWidth < 1280 && origin.index == 0) { fullpage_api.setResponsive(true); return; }
+      if (window.innerWidth < 1280) { return; }
+      if (origin.index == 0 && destination.index > 8) { $ball.classList.add("ball--stay", "ball--center"); return; }
 
+      $ball.removeEventListener("click", ballClickHandler);
       await new Promise(resolve => {setTimeout( () => resolve(), 200);});
+
       if (origin.index == 8 && direction == "down") {
-        // console.log("8 down");
-        // $ball.removeEventListener("click", ballClickHandler);
         $ball.classList.add("ball--stay");
-        // $ball2.classList.remove("hide");
-        await new Promise(resolve => {setTimeout( () => resolve(), 1000);});
-        
       }
       else if (origin.index == 9 && destination.index == 8) {
         await new Promise(resolve => {setTimeout( () => resolve(), 2000);});
         $ball.classList.remove("ball--stay");
-        // $ball.addEventListener("click", ballClickHandler);
-        // $ball2.classList.add("hide");
       }
       else if (origin.index > 1 && destination.index == 0) {
-        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        console.log("to up");
         $ball.classList.remove("ball--stay");
         $ball.classList.remove("ball--center");
-        // $ball2.classList.add("hide");
       }
       else if (origin.index == 1 && destination.index == 0) {
-        // $ball.removeEventListener("click", ballClickHandler);
         $ball.classList.remove("ball--stay");
-
         $ball.classList.remove("ball--center");
-        $ball.classList.add("ball--center-to-down");
+        $ball.classList.add("ball--center-to-top");
         $ball.classList.add("ball--animate");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
-        $ball.classList.remove("ball--center-to-down");
-        $ball.classList.remove("ball--animate");
-        
-        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        // $ball.addEventListener("click", ballClickHandler);
+        removeAnimationClasses();
       }
       else if (origin.index == 0 && destination.index == 1) {
-        // $ball.removeEventListener("click", ballClickHandler);
         $ball.classList.remove("ball--stay");
-
         $ball.classList.remove("ball--center");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
         $ball.classList.add("ball--top-to-center");
         $ball.classList.add("ball--animate");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
-        $ball.classList.remove("ball--top-to-center");
-        $ball.classList.remove("ball--animate");
-        $ball.classList.add("ball--center");
-        
-        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        // $ball.addEventListener("click", ballClickHandler);
+        removeAnimationClasses();
+        $ball.classList.add("ball--center");   
       }
-      else if ((origin.index == 1 || origin.index == 3 || origin.index == 5 || origin.index == 7) /*&& direction == "down"*/) {
-        // $ball.removeEventListener("click", ballClickHandler);
+      else if (origin.index % 2 == 1 && direction == "down") {
         $ball.classList.remove("ball--stay");
-
         $ball.classList.remove("ball--center");
         $ball.classList.add("ball--center-to-right");
         $ball.classList.add("ball--animate");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
-        $ball.classList.remove("ball--center-to-right");
-        $ball.classList.remove("ball--animate");
+        removeAnimationClasses();
         $ball.classList.add("ball--left-to-center");
         $ball.classList.add("ball--animate");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
@@ -315,28 +296,45 @@ let myFullpage = new fullpage('#app', {
         $ball.classList.remove("ball--animate");
         $ball.classList.add("ball--center");
         
-        // await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        // $ball.addEventListener("click", ballClickHandler);
       } 
-      else if ((origin.index == 2 || origin.index == 4 || origin.index == 6 | origin.index == 8) /*&& direction == "down"*/) {
-        // $ball.removeEventListener("click", ballClickHandler);
+      else if (origin.index % 2 == 0 && direction == "down") {
         $ball.classList.remove("ball--stay");
-        
         $ball.classList.remove("ball--center");
         $ball.classList.add("ball--center-to-down");
         $ball.classList.add("ball--animate");
-        await new Promise(resolve => {setTimeout( () => resolve(), 500);});
-        $ball.classList.remove("ball--center-to-down");
-        $ball.classList.remove("ball--animate");
+        await new Promise(resolve => {setTimeout( () => resolve(), 500);}); //!!!
+        removeAnimationClasses();
         $ball.classList.add("ball--top-to-center");
         $ball.classList.add("ball--animate");
         await new Promise(resolve => {setTimeout( () => resolve(), 750);});
-        $ball.classList.remove("ball--top-to-center");
-        $ball.classList.remove("ball--animate");
+        removeAnimationClasses();
         $ball.classList.add("ball--center");
-        
-        // await new Promise(resolve => {setTimeout( () => resolve(), 7500);});
-        // $ball.addEventListener("click", ballClickHandler);
+      }
+      else if (origin.index % 2 == 0 && direction == "up") {
+        $ball.classList.remove("ball--stay");
+        $ball.classList.remove("ball--center");
+        $ball.classList.add("ball--center-to-left");
+        $ball.classList.add("ball--animate");
+        await new Promise(resolve => {setTimeout( () => resolve(), 750);});
+        removeAnimationClasses();
+        $ball.classList.add("ball--right-to-center");
+        $ball.classList.add("ball--animate");
+        await new Promise(resolve => {setTimeout( () => resolve(), 750);});
+        removeAnimationClasses();
+        $ball.classList.add("ball--center");
+      } 
+      else if (origin.index % 2 == 1 && direction == "up") {
+        $ball.classList.remove("ball--stay");
+        $ball.classList.remove("ball--center");
+        $ball.classList.add("ball--center-to-top");
+        $ball.classList.add("ball--animate");
+        await new Promise(resolve => {setTimeout( () => resolve(), 600);}); //!!!
+        removeAnimationClasses();
+        $ball.classList.add("ball--down-to-center");
+        $ball.classList.add("ball--animate");
+        await new Promise(resolve => {setTimeout( () => resolve(), 750);});
+        removeAnimationClasses();
+        $ball.classList.add("ball--center");
       }
     },
 });
@@ -344,7 +342,7 @@ let myFullpage = new fullpage('#app', {
 // fullpage_api.setKeyboardScrolling(false);
 
 
-if (window.innerWidth < 1280) {fullpage_api.setResponsive(true);}
+// if (window.innerWidth < 1280) {fullpage_api.setResponsive(true);}
 window.addEventListener("resize", (e) => {
   if (window.innerWidth < 1280) {
     fullpage_api.setResponsive(true);
@@ -400,7 +398,7 @@ window.addEventListener('load', AOS.refresh);
 
 ///МЕТРИКИ
 
-const logo_zictop = document.querySelector(".js-logo_zictop");
+const logo_zictop = document.querySelector(".ev-logo_zictop");
 const logo_zictop_metrika_event = (e) => {
   // ym(42193809, 'reachGoal', 'logo_zictop');
   gtag('event', 'logo_zictop', {
@@ -408,7 +406,30 @@ const logo_zictop_metrika_event = (e) => {
     // 'event_label': "ccc",
     // 'value': 10,
   });
-  
 } 
 logo_zictop.addEventListener("click", logo_zictop_metrika_event);
 
+
+const logo_chempionat = document.querySelector(".ev-logo_chempionat");
+const logo_chempionat_metrika_event = (e) => { gtag('event', `${isMob}logo_chempionat`); } 
+logo_chempionat.addEventListener("click", logo_chempionat_metrika_event);
+
+const icon_next = document.querySelector(".ev-icon_next");
+const icon_next_metrika_event = (e) => { gtag('event', `${isMob}icon_next`); } 
+icon_next.addEventListener("click", icon_next_metrika_event);
+
+const icon_up = document.querySelector(".ev-icon_up");
+const icon_up_metrika_event = (e) => { gtag('event', `${isMob}icon_up`); } 
+icon_up.addEventListener("click", icon_up_metrika_event);
+
+const logo_sku_1 = document.querySelector(".ev-logo_sku_1");
+const logo_sku_1_metrika_event = (e) => { gtag('event', `${isMob}logo_sku_1`); } 
+logo_sku_1.addEventListener("click", logo_sku_1_metrika_event);
+
+const logo_sku = document.querySelectorAll(".ev-logo_sku");
+const logo_sku_metrika_event = (e) => { gtag('event', `${isMob}logo_sku_${e.target.dataset.num}`); };
+logo_sku.forEach( (el) => {el.addEventListener("click", logo_sku_metrika_event);} );
+
+const button_final_learn_more = document.querySelector(".ev-button_final_learn_more");
+const button_final_learn_more_metrika_event = (e) => { gtag('event', `${isMob}button_final_learn_more`); } 
+button_final_learn_more.addEventListener("click", button_final_learn_more_metrika_event);
