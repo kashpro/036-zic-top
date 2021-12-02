@@ -20,9 +20,7 @@
 @import "./blocks/ball.scss";
 /*blocks*/
 // Даже внутри подпапок ссылка на ассеты будет выглядеть так: url("../assets/images/3.png"); (без дополнительного выхода наверх из подпапки)
-// @import "./blocks/group1.scss";
 @import "./blocks/header.scss";
 @import "./blocks/title.scss";
 @import "./blocks/main.scss";
 @import "./blocks/team.scss";
-@import "./blocks/footer.scss";

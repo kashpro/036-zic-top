@@ -1,12 +1,5 @@
 .decor {
   width: 155px;
-  // height: 255px;
-  // background-image: url("../assets/images/zic_bottle.png");
-  // background-size: contain;
-  // background-repeat: no-repeat;
-  // position: absolute;
-  // bottom: 50px;
-  // left: 0;
   font-family: $second-font;
   font-weight: 500;
   font-size: 18px;
@@ -16,12 +9,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // background-color: $temp2;
-  // @media (max-width: 1760px) {
-    // font-size: 18rem;
-    // line-height: 23rem;
-    // width: 155rem;
-  // }
   img {
     transition: all 0.2s ease;
     @include hover {

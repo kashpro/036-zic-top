@@ -48,13 +48,6 @@ h1, h2, h3 ,h4, h5, h6{
   padding: 0;
 }
 
-// html {
-//   @media (max-width: 1279px) {
-//     scroll-behavior: smooth; // плавный скролл
-//   }
-// }
-
-
 body {
   -webkit-tap-highlight-color: transparent; // убрать синий БГ при таче
   background-image: url("../assets/images/bg4.jpg");
@@ -84,41 +77,13 @@ html {
   --app-height: 100%;
 }
 
-// html,
-// body {
-//    height: var(--app-height);
-// }
-
-// .fp-tableCell {
-//   @media (max-width: 1279px) {
-//     height: auto !important;
-//   }
-// }
-
 .js-section {
   @media (max-width: 1279px) {
     height: auto !important;
   }
-  // &-100vh {
-  //   @media (max-width: 1279px) {
-  //     height: 100vh !important;
-  //   }
-  //   height: 100vh;
-  // }
 }
 
 #app {
   position: relative;
   z-index: 5;
 }
-
-// body::after{
-//   position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
-//   // content: url("../assets/images/ball-ltr-ei.png") url("../assets/images/ball-ltr-eo.png") url("../assets/images/ball-ttd-eo.png");   // load images
-// }
-
-// ::-webkit-scrollbar {
-//   @media (min-width: 1280px) {
-//     display: none;
-//   }
-// }

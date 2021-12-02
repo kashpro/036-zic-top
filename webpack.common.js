@@ -177,17 +177,17 @@ module.exports = {
         {from: './_public', to: '', noErrorOnMissing: true}, // для пустой папки _public
       ],
     }),
-    // new ImageMinimizerPlugin({
-    //   minimizerOptions: {
-    //     plugins: [
-    //       // ['webp', {quality: 70}], // если включено - ВСЕ будет завернуто в webp (RIFF-контейнеры). Могут быть проблемы с отображением на iphone 12
-    //       ['pngquant', {quality: [0.6, 0.8]}],
-    //       ['mozjpeg', {quality: 80}],
-    //       ['gifsicle', {interlaced: false, optimizationLevel: 3}],
-    //       ['svgo', {}],
-    //     ],
-    //   },
-    // }),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          // ['webp', {quality: 70}], // если включено - ВСЕ будет завернуто в webp (RIFF-контейнеры). Могут быть проблемы с отображением на iphone 12
+          ['pngquant', {quality: [0.6, 0.8]}],
+          ['mozjpeg', {quality: 80}],
+          ['gifsicle', {interlaced: false, optimizationLevel: 3}],
+          ['svgo', {}],
+        ],
+      },
+    }),
     ...findHtmlTemplates(),
     ...findPugTemplates(),
   ],

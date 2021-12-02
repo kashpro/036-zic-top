@@ -2,15 +2,13 @@
   cursor: pointer;
   width: 250px;
   height: 250px;
-  position: fixed;
+  position: absolute;
   bottom: 100px;
   left: 50%;
-  // transform: translate(-50%, 0px);
   transform: translate(-10000px, -10000px);
   background-image: url("../assets/images/ball.png");
   background-size: 100%;
   background-repeat: no-repeat;
-  // background-position: 0 4%;
   z-index: 15;
   opacity: 1;
   @media (min-width: 1760px) and (max-height: 900px) {
@@ -50,10 +48,6 @@
   }
   @media (max-width: 1279px) {
     display: none;
-  }
-  &--stay {
-    position: absolute;
-    // transform: translate(-50%, 0);
   }
   &--center {
     transform: translate(-50%, 0);
